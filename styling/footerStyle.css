@@ -1,0 +1,12 @@
+footer {
+    text-align: center;
+    background: #04aa6d;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.footerBox {
+    margin-top: 70px;
+    width: 100%;
+}
