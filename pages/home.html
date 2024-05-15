@@ -3,6 +3,7 @@
     <head>
         <link href="../styling/navBar.css" rel="stylesheet" type="text/css">
         <link href="../styling/footerStyle.css" rel="stylesheet" type="text/css">
+        <link href="../styling/homeStyle.css" rel="stylesheet" type="text/css">
         <style>
             img {
                 width: 25px;
@@ -35,11 +36,94 @@
             </div>
         </div>
 
+        <form>
+            <div>
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" placeholder="123 Somewhere Avenue SomeTown" required>
+            </div>
+
+            <br>
+
+            <div class="cusineDiv">
+                <label for="type">Type:</label>
+                
+                <ul class="cusineList">
+                    <li>
+                        <label for="breakfast">Breakfast</label>
+                        <input type="radio" id="breakfast" name="type" value="Breakfast">
+                    </li>
+
+                    <li>
+                        <label for="dinner">Dinner</label>
+                        <input type="radio" id="dinner" name="type" value="Dinner">
+                    </li>
+
+                    <li>
+                        <label for="fastFood">Fast Food</label>
+                        <input type="radio" id="fastFood" name="type" value="Fast Food">
+                    </li>
+
+                    <li>
+                        <label for="mexican">Mexican</label>
+                        <input type="radio" id="mexican" name="type" value="Mexican">
+                    </li>
+
+                    <li>
+                        <label for="southA">South Asian</label>
+                        <input type="radio" id="southA" name="type" value="South Asian">
+                    </li>
+
+                    <li>
+                        <label for="asian">East Asian</label>
+                        <input type="radio" id="asian" name="type" value="Asian">
+                    </li>
+
+                    <li>
+                        <label for="western">Western</label>
+                        <input type="radio" id="western" name="type" value="Western">
+                    </li>
+
+                    <li>
+                        <label for="dessert">Forget Food I want SWEEEEEETS</label>
+                        <input type="radio" id="dessert" name="type" value="Dessert">
+                    </li>
+
+                </ul>
+            </div>
+
+            <br>
+
+            <div class="submitButton">
+                <input type="submit">
+            </div>
+
+        </form>
+
+        <div class="intro">
+            <p>
+                Hi, Please enter your location as well as what type of food your are craving to see nearby restaurants. 
+                If you're not sure about the type of food thats not a problem, you can go ahead and leave that empty and we will find restaurants near you!!
+            </p>
+        </div>
+
+        <div class="pictures">
+            <img src="../attachments/foodWheel.jpeg"
+            alt="Food Wheel" 
+            height="200"
+            width="300"
+            style="position:relative; left:20px;">
+
+            <img src="../attachments/hardPicking.jpeg" 
+            alt="Boy getting frustrated with too many options"
+            width="300"
+            style="position:relative; left:600px;">
+
         <div class="footerBox">
             <footer>
                 <p>&copySufyan Chaudhry</p>
             </footer>
         </div>
+
 
     </body>
 </html>

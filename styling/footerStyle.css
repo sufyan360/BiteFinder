@@ -2,7 +2,7 @@ footer {
     text-align: center;
     background: #04aa6d;
     width: 100%;
-    position: fixed;
+    position: relative;
     bottom: 0;
 }
 

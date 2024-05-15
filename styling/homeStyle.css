@@ -1,21 +1,31 @@
-
-body {
-    background-color: white;
-    padding: 0px;
-    margin-top: 0px;
+body form{
+    margin-left: 15px;
+}
+.cusineDiv ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    text-align: center;
 }
 
-p {
-    text-indent: 25px;
+.cusineDiv li {
+    display: inline-block;
+    margin-left: 70px;
+    padding-top: 25px;
+    position: relative;
+}
+form .submitButton{
+    text-align: center;
+}
+
+.intro {
+    text-align: center;
+    font-size: 20px;
 }
 
 .pictures img{
-    width: 300px;
+    width: 400px;
     height: auto;
     
 }
-
-.elevatorIntro {
-    padding-left: 10px;
-}
-
