@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'styling/aboutStyle.css')}}">
+{% endblock %}
+
+{% block title %} About Me {% endblock %}
+
+{% block content %}
+
+<div class="elevatorIntro">
+    <p> 
+        Hi, I am Sufyan Chaudhry, a computer science major who is graduating from Lewis University 
+        in the Chicago land area. I fell in love with coding in freshmen year of college, before that 
+        I always assumed that coding was something boring and I wanted something more hands on. 
+        But once exposed to programming I took a liking to it right away. 
+    </p>
+</div>
+
+<div class="pictures">
+    <img src="../static/attachments/skyLine.jpeg" 
+    alt="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpixels.com%2Ffeatured%2Fchicago-skyline-at-night-high-resolution-image-paul-velgos.html&psig=AOvVaw3uou6EhKtRrT-4KUNjsnuV&ust=1715734459706000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIjhh574i4YDFQAAAAAdAAAAABAE" 
+    height="200"
+    width="300"
+    style="position:relative; left:20px;">
+
+    <img src="../static/attachments/coding.jpeg" 
+    alt="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fprogramming%2F&psig=AOvVaw0Rqt_HF3NwK85lwFinXNQs&ust=1715734590978000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCOigl8n3i4YDFQAAAAAdAAAAABAE"
+    width="300"
+    style="position:relative; left:650px;">
+</div>
+
+{% endblock %}

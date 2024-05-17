@@ -2,11 +2,15 @@ footer {
     text-align: center;
     background: #04aa6d;
     width: 100%;
-    position: relative;
+    position: fixed;
+    left: 0;
     bottom: 0;
+    flex-shrink: 0;
+    z-index: 10;
 }
 
 .footerBox {
     margin-top: 70px;
+    margin-bottom: 0px;
     width: 100%;
 }

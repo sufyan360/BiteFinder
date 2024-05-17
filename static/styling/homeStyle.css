@@ -1,3 +1,14 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+.content {
+    flex-grow: 1; /* Allow content to grow and push footer down */
+    margin-bottom: -20px;
+}
+
 body form{
     margin-left: 15px;
 }
@@ -24,7 +35,8 @@ form .submitButton{
     font-size: 20px;
 }
 
-.pictures img{
+.pictures
+ img{
     width: 400px;
     height: auto;
     

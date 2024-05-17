@@ -1,4 +1,8 @@
+
+
 body {
+    width: 100%;
+    overflow-x: hidden;
     margin-top: 0px;
     margin-left: 0px;
 }
@@ -21,7 +25,7 @@ h1{
 
 .topBar {
     width: 80%;
-    margin: 0 auto;
+    margin: 15px auto;
 }
 
 nav {
