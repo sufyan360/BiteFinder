@@ -1,8 +1,4 @@
-
 body {
-    background-color: white;
-    padding: 0px;
-    margin-top: 0px;
     display: flex;
     flex-direction: column;
     min-height: 100vh; 
@@ -11,10 +7,4 @@ body {
 .content { 
     padding-left: 25px;
     text-indent: 25px;
-}
-
-.pictures img{
-    width: 300px;
-    height: auto;
-    
 }

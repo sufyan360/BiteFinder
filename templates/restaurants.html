@@ -1,4 +1,15 @@
-<!DOCTYPE html>
-<html>
-    
-</html>
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'styling/restaurantStyle.css')}}">
+{% endblock %}
+
+{% block title %} Restaurants {% endblock %}
+        
+{% block content %}
+    <h1> Restaurants Near You </h1>
+
+    <div class="content">
+        {{ userLocation }}
+        {{ foodType }}
+    </div>
+{% endblock %}

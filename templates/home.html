@@ -6,7 +6,7 @@
 {% block title %} Home Page {% endblock %}
 
 {% block content %}
-        <form>
+        <form method="post" autocomplete="off">
             <div>
                 <label for="location">Location:</label>
                 <input type="text" id="location" name="location" placeholder="123 Somewhere Avenue SomeTown" required>
@@ -35,22 +35,22 @@
 
                     <li>
                         <label for="mexican">Mexican</label>
-                        <input type="radio" id="mexican" name="type" value="Mexican">
+                        <input type="radio" id="mexican" name="type" value="Mexican Food">
                     </li>
 
                     <li>
                         <label for="southA">South Asian</label>
-                        <input type="radio" id="southA" name="type" value="South Asian">
+                        <input type="radio" id="southA" name="type" value="South Asian Food">
                     </li>
 
                     <li>
                         <label for="asian">East Asian</label>
-                        <input type="radio" id="asian" name="type" value="Asian">
+                        <input type="radio" id="asian" name="type" value="Asian Food">
                     </li>
 
                     <li>
                         <label for="italian">Italian</label>
-                        <input type="radio" id="italian" name="type" value="Italian">
+                        <input type="radio" id="italian" name="type" value="Italian Food">
                     </li>
 
                     <li>
@@ -67,7 +67,7 @@
 
                     <li>
                         <label for="random">I can't decide :( </label>
-                        <input type="radio" id="random" name="type" value="Random">
+                        <input type="radio" id="random" name="type" value="Food" checked="checked">
                     </li>
 
                 </ul>
@@ -78,13 +78,12 @@
             <div class="submitButton">
                 <input type="submit">
             </div>
-
         </form>
-
+        
         <div class="intro">
             <p>
                 Hi, Please enter your location as well as what type of food your are craving to see nearby restaurants. 
-                If you're not sure about the type of food thats not a problem, you can go ahead and leave that empty and we will find restaurants near you!!
+                If you're not sure about the type of food thats not a problem, you can go ahead and select random and we will find restaurants near you!!
             </p>
         </div>
 
