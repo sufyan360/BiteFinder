@@ -83,9 +83,6 @@ def home():
 def about():
     return render_template('aboutMe.html', name = "About")
 
-@app.route('/resume')
-def resume():
-    return render_template('resumePage.html', name = "Resume")
 
 if __name__ == '__main__':
     app.run(debug = True)
