@@ -6,10 +6,16 @@
 {% block title %} Home Page {% endblock %}
 
 {% block content %}
-        <form method="post" autocomplete="off">
-            <div>
+        <form action = "/" method="POST" autocomplete="off">
+            <div class="locationBox">
                 <label for="location">Location:</label>
                 <input type="text" id="location" name="location" placeholder="123 Somewhere Avenue SomeTown" required>
+                <button class="getCoordinates" type="button" id="getCoordinates" onclick="getLocation()">
+                    <img src="../static/attachments/locationPin.png"
+                    alt="Find Coordinates" 
+                    height="10"
+                    width="10" >
+                </button>
             </div>
 
             <br>
@@ -66,7 +72,7 @@
                     </li>
 
                     <li>
-                        <label for="random">I can't decide :( </label>
+                        <label for="random">Random (Surprise Me!!!!)</label>
                         <input type="radio" id="random" name="type" value="Food" checked="checked">
                     </li>
 
@@ -82,7 +88,7 @@
         
         <div class="intro">
             <p>
-                Hi, Please enter your location as well as what type of food your are craving to see nearby restaurants. 
+                Hi, Please enter your location(coordinates - click the button, address, city, zipcode) as well as what type of food your are craving to see nearby restaurants. 
                 If you're not sure about the type of food thats not a problem, you can go ahead and select random and we will find restaurants near you!!
             </p>
         </div>
@@ -98,4 +104,29 @@
             alt="Boy getting frustrated with too many options"
             width="300"
             style="position:relative; left:250px;">
+        </div>
+
+        <script>
+            document.getElementById("get_location").addEventListener("click", function(event){
+                event.preventDefault();
+                getLocation();
+            });
+    
+            function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                } else {
+                    alert("Geolocation is not supported by this browser.");
+                }
+            }
+
+            function showPosition(position) {
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+
+                document.getElementById("location").value = latitude + ", " + longitude;
+            }
+        </script>
+
+
 {% endblock %}

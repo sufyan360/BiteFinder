@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block head %}
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'styling/restaurantStyle.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'styling/restaurantStyle.css')}}">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 {% endblock %}
 
 {% block title %} Restaurants {% endblock %}
@@ -9,7 +10,63 @@
     <h1> Restaurants Near You </h1>
 
     <div class="content">
-        {{ userLocation }}
-        {{ foodType }}
+        <div id="map-container">
+            <div id="map"></div>
+        </div>
+
+        <script type="module" src="/static/finder.js" ></script>
+
+        <script>
+            {% set center = userLocation.split(',') %}
+            const userLocation = {
+                lat: parseFloat({{center[0]}}), 
+                lng: parseFloat({{center[1]}})
+            };
+
+            const markerList = [];
+
+            {% for place in places %}
+                markerList.push([
+                    "{{place.name}}",
+                    {{place.geometry.location.lat}},
+                    {{place.geometry.location.lng}},
+                    "{{place.vicinity}}",
+                ]);
+            {% endfor %}
+            
+        </script>
+
+        <div class="restaurantBox">
+            <ul>
+                {% for place in places %}
+                    <div>
+                        <li> 
+                            <div class = "eachItemBox" id="eachItemBox-{{loop.index}}" class = "clickable">
+
+                                <h2> {{ place.name }} </h2>
+                                {% if place.opening_hours %}
+                                    <p> OPEN </p>
+                                {% else %}
+                                    <p> CLOSED </p>
+                                {% endif %}
+
+                                {% if place.rating %}
+                                    <p> Rating: {{ place.rating }} based off {{ place.user_ratings_total }} ratings</p>
+                                {% else %}
+                                    <p> Not rated yet </p>
+                                {% endif %}
+
+                                <p> {{ place.vicinity }} </p>
+                            </div>
+                        </li>
+                    </div>  
+                {% endfor %}
+            </ul>
+        </div>
+
+        <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+            ({key: "AIzaSyDWDESc1vZxTMUsTPLvgGKoOCt1jv5SpsY", v: "weekly"});
+        </script>
+
     </div>
 {% endblock %}

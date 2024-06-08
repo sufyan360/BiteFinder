@@ -7,4 +7,40 @@ body {
 .content { 
     padding-left: 25px;
     text-indent: 25px;
+    align-items: center;
 }
+
+h2 {
+    font-size: 20px;
+}
+
+.restaurantBox ul {
+    list-style: none;
+}
+
+.restaurantBox li :hover {
+    cursor: pointer;
+}
+
+#map-container {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 50px;
+    float: right;
+}
+#map {
+    height: 400px;
+    width: 400px;
+    margin-right: 20px;
+    display: block;
+
+  } 
+
+.eachItemBox {
+    width: 300px; 
+    height: auto; 
+    border: 5px solid #04aa6d; 
+    margin: 10px; 
+    text-align: center; 
+}
+
